@@ -9,7 +9,7 @@ This projects demonstrates the integration between RN and Android. RN-managed Ac
 ## How it works
 1. <b>Java -> RN.</b> When Activity with RN content is launched from drawer it creates ReactRootView and builds ReactInstanceManager instance within onCreate() lifecircle method. Then the instance of ReactInstanceManager is passed to ReactRootView object and setContentView() of Activity is called with created ReactRootView object.
 2. <b>Java -> RN.</b> The same operations sequence is performed for the launched Fragment. The primary difference is the the point of creation of RN stuff: the fragment starts its communication with RN in its onCreateView() lifecircle method when the Activity performs this in its onCreate() lifecircle.
-3. <b>RN -> Java.</b> With a help of <code>ReactPackage</code> and React module (anyone that inherits from <code>ReactContextBaseJavaModule<//code>) Java method decorated by <code>@ReactMethod</code> attribure is exposed to JS context, i.e. made avaiable to JS. In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
+3. <b>RN -> Java.</b> With a help of <code>ReactPackage</code> and React module (anyone that inherits from <code>ReactContextBaseJavaModule</code>) Java method decorated by <code>@ReactMethod</code> attribure is exposed to JS context, i.e. made avaiable to JS. In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
 <code>import { NativeModules } from 'react-native';</code>
 
 
