@@ -76,11 +76,11 @@ let tripleNum: JSValue = context.evaluateScript("triple(num)")
 For Java it may be a bit more compilcated, but several (like [LiquidCore](https://github.com/LiquidPlayer/LiquidCore)) community projects exists to simplify this task.
 
 Note that that RN uses JSC for production and V8 Engine for degugging purposes. 
-In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
+JS part of the process is done within a NaviveModule namespace that imported to JS by 
 ```javascript
 import { NativeModules } from 'react-native';
 ```
-Then the exposed method is called as simple as 
+Then the Java-exposed method is called as simple as:
 ```javascript
 var ToastAndroid = require('NativeModules').ToastAndroid;
 ToastAndroid.show('Awesome', ToastAndroid.SHORT);
