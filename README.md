@@ -3,7 +3,7 @@ This project demonstrates the integration between RN and Android. Android Activi
 
 ## How to build
 1. Clone the repo
-2. Start Android emulator
+2. [Start](https://developer.android.com/studio/run/emulator-commandline) Android emulator
 3. run <code>react-native run-android</code> from project root directory, i.e. directory containing <code>package.json</code> file
 
 ## How it works
