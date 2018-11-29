@@ -65,7 +65,16 @@ runtime.executeVoidScript(""
  + "call(33, 'thirty three');\n";
 ```
 
-It's sure that the similar API exists for JavaScriptCore (JSC) Engire as well. Practically RN uses JSC for production and V8 Engine for degugging purposes. 
+The similar API exists for JavaScriptCore (JSC) Engire as well. For Swift/ObjC it looks embedded into the runtime environment:
+```Swift
+let context = JSContext()
+context.evaluateScript("var num = 5 + 5")
+context.evaluateScript("var names = ['Grace', 'Ada', 'Margaret']")
+context.evaluateScript("var triple = function(value) { return value * 3 }")
+let tripleNum: JSValue = context.evaluateScript("triple(num)")
+```
+
+Note that that RN uses JSC for production and V8 Engine for degugging purposes. 
 In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
 ```javascript
 import { NativeModules } from 'react-native';
