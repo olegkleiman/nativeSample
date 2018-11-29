@@ -18,8 +18,8 @@ import { NativeModules } from 'react-native';
 ```
 Then the exposed method is called as simple as 
 ```javascript
-  var ToastAndroid = require('NativeModules').ToastAndroid;
-  ToastAndroid.show('Awesome', ToastAndroid.SHORT);
+var ToastAndroid = require('NativeModules').ToastAndroid;
+ToastAndroid.show('Awesome', ToastAndroid.SHORT);
 ```
 Because the dynamic way of the exposition, this call is unsafe meaning there is no way to JS to know in advance the methods or properties added to JS context by [ReactPackage](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/ReactPackage.java).
 
