@@ -59,6 +59,12 @@ runtime.registerJavaMethod(new JavaVoidCallback() {
 ...
 runtime.release();
 ```
+Than the scipt containing 'call' method in its context may be executed:
+```java
+runtime.executeVoidScript(""
+ + "call(33, 'thirty three');\n";
+```
+
 It's sure that the similar API exists for JavaScriptCore (JSC) Engire as well. Practically RN uses JSC for production and V8 Engine for degugging purposes. 
 In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
 ```javascript
