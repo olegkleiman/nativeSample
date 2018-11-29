@@ -13,7 +13,7 @@ This project demonstrates the integration between RN and Android. Android Activi
 
 Generally there are many way to reach the JS Engine context from Java. It seems that RN used <code>j2v8 bindings</code> for this purpose. It's sure that the similar API exists for JavaScriptCore (JSC) Engire as well. Practically RN uses JSC for production and V8 Engine for degugging purposes. 
 In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
-<code>import { NativeModules } from 'react-native';</code>. That the exposed methid is called as simple as 
+<code>import { NativeModules } from 'react-native';</code>. That the exposed method is called as simple as 
 ```javascript
   var ToastAndroid = require('NativeModules').ToastAndroid;
   ToastAndroid.show('Awesome', ToastAndroid.SHORT);
