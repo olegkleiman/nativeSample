@@ -86,3 +86,5 @@ var ToastAndroid = require('NativeModules').ToastAndroid;
 ToastAndroid.show('Awesome', ToastAndroid.SHORT);
 ```
 Because the dynamic way of the exposition, this call is unsafe meaning there is no way to JS to know in advance the methods or properties added to JS context by [ReactPackage](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/ReactPackage.java).
+
+Another point of interest of RN is [Metro Bundler](https://facebook.github.io/metro/en/). Generally it is both special-purpose bundler (like webpack) and HTTP server (like webpack-dev-server).
