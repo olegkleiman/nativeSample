@@ -1,5 +1,5 @@
 # nativeSample
-This project demonstrates the integration between RN and Android. RN-managed Activity/Fragment is launched from the drawer to pick up the React component defined in JS. From within RN script, exposed Java method is invoked from NaviteModules JS namespace.
+This project demonstrates the integration between RN and Android. Android Activity/Fragment is launched from the drawer to pick up the React Native component defined in JS. Additionlly, from within RN script, exposed Java method is invoked from NaviteModules JS namespace.
 
 ## How to build
 1. Clone the repo
