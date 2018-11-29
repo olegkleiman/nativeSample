@@ -4,7 +4,7 @@ This projects demonstrates the integration between RN and Android. RN-managed Ac
 ## How to build
 1. Clone the repo
 2. Start Android emulator
-3. run <i>react-native run-android</i>
+3. run <code>react-native run-android</code> from project root directory, i.e. directory containing <code>package.json</code> file
 
 ## How it works
 When Activity with RN content is launched from drawer it creates ReactRootView and builds ReactInstanceManager instance within onCreate() lifecircle method. Then the instance of ReactInstanceManager is passed to ReactRootView object and setContentView() of Activity is called with created ReactRootView object.
