@@ -33,7 +33,12 @@ This project demonstrates the integration between RN and Android. Android Activi
 2. <b>Java -> RN.</b> The same operations sequence is performed for the launched Fragment. The primary difference is the the point of RN stuff creation: the Fragment starts its communication with RN in its onCreateView() lifecycle method when the Activity performs this in its onCreate() lifecycle.
 3. <b>RN -> Java.</b> With a help of [ReactPackage](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/ReactPackage.java) and React module (anyone that inherits from [ReactContextBaseJavaModule](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/bridge/ReactContextBaseJavaModule.java) Java method decorated by <code>@ReactMethod</code> attribure is exposed to JS context, i.e. made avaiable to JS. Internally this done by Java reflection that investigates the ReactModule and in particular looks for the methods decorated by [<code>@ReactMethod</code>](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/bridge/ReactMethod.java)  attribute. [ReactModuleSpecProcessor](https://github.com/facebook/react-native/blob/42146a7a4ad992a3597e07ead3aafdc36d58ac26/ReactAndroid/src/main/java/com/facebook/react/module/processing/ReactModuleSpecProcessor.java) is in charge of this job.
 
-Generally there are many way to reach the JS Engine context from Java. It seems that RN used <code>j2v8 bindings</code> for this purpose. The following is a simplified example of V8 context extending with j2v8 bindings
+Generally there are many way to reach the JS Engine context from Java. It seems that RN used <code>j2v8 bindings</code> for this purpose. The following is a simplified example of V8 context extending with j2v8 bindings:
+```
+dependencies {
+    compile 'com.eclipsesource.j2v8:j2v8:4.6.0@aar'
+}
+```
 ```java
 import com.eclipsesource.v8.JavaVoidCallback;
 import com.eclipsesource.v8.V8;
