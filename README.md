@@ -87,4 +87,4 @@ ToastAndroid.show('Awesome', ToastAndroid.SHORT);
 ```
 Because the dynamic way of the exposition, this call is unsafe meaning there is no way to JS to know in advance the methods or properties added to JS context by [ReactPackage](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/ReactPackage.java).
 
-Another point of interest of RN is [Metro Bundler](https://facebook.github.io/metro/en/). Generally it is both special-purpose bundler (like <code>webpack</code>) and HTTP server (like <code>webpack-dev-server</code>).
+Another point of interest of RN is [Metro Bundler](https://facebook.github.io/metro/en/). Generally it is both special-purpose bundler (like <code>webpack</code>) and HTTP server (like <code>webpack-dev-server</code>). Much like webpack, Metro may be [configured]9https://facebook.github.io/metro/docs/en/configuration).
