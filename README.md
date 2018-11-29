@@ -73,6 +73,7 @@ context.evaluateScript("var names = ['Grace', 'Ada', 'Margaret']")
 context.evaluateScript("var triple = function(value) { return value * 3 }")
 let tripleNum: JSValue = context.evaluateScript("triple(num)")
 ```
+For Java it may be a bit more compilcated, but several (like [LiquidCore](https://github.com/LiquidPlayer/LiquidCore)) community projects exists to simplify this task.
 
 Note that that RN uses JSC for production and V8 Engine for degugging purposes. 
 In the case of RN this exposition is done within a NaviveModule namespace that introduced to JS by 
