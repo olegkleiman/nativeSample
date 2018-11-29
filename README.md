@@ -18,6 +18,6 @@ In the case of RN this exposition is done within a NaviveModule namespace that i
   var ToastAndroid = require('NativeModules').ToastAndroid;
   ToastAndroid.show('Awesome', ToastAndroid.SHORT);
 ```
-Because the dynamic way of the exposition, this call is unsafe meaning there is no way to JS to know in advance the methods or properties added to JS context by <code>ReactPackage</code>.
+Because the dynamic way of the exposition, this call is unsafe meaning there is no way to JS to know in advance the methods or properties added to JS context by [ReactPackage](https://github.com/facebook/react-native/blob/master/ReactAndroid/src/main/java/com/facebook/react/ReactPackage.java).
 
 
