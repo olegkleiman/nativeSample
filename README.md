@@ -65,7 +65,7 @@ runtime.executeVoidScript(""
  + "call(33, 'thirty three');\n";
 ```
 
-The similar API exists for JavaScriptCore (JSC) Engire as well. For Swift/ObjC it is embedded into the runtime environment:
+The similar API exists for JavaScriptCore (JSC) Engire as well. With a help of JavaScriptCore framework, it is embedded into the runtime environment for Swift/ObjC:
 ```Swift
 let context = JSContext()
 context.evaluateScript("var num = 5 + 5")
