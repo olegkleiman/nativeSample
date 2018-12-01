@@ -47,12 +47,18 @@ import com.eclipsesource.v8.V8Array;
 import com.eclipsesource.v8.V8Object;
 ...
 
+private void consoleLog(V8Array parameters) {
+    String p = parameters.getString(0);
+    Log.i(TAG, p);
+    parameters.release();
+}        
+
 V8 runtime = V8.createV8Runtime();
 runtime.registerJavaMethod(new JavaVoidCallback() {
     public void invoke(final V8Object receiver, final V8Array parameters) {
 
         if (parameters.length() > 0) {
-            jcdemoString(parameters);
+            consoleLog(parameters);
         }
 
     }
@@ -60,7 +66,7 @@ runtime.registerJavaMethod(new JavaVoidCallback() {
 ...
 runtime.release();
 ```
-Than the scipt containing 'call' method in its context may be executed:
+Than the scipt containing 'call' method in its context then may be executed:
 ```java
 runtime.executeVoidScript(""
  + "call(33, 'thirty three');\n";
