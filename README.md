@@ -65,11 +65,22 @@ runtime.executeVoidScript(""
  + "call(33, 'thirty three');\n";
 ```
 
-The similar API exists for JavaScriptCore (JSC) Engire as well. With a help of JavaScriptCore framework, it is embedded into the runtime environment for Swift/ObjC:
+The similar API exists for JavaScriptCore (JSC) Engire as well. With a help of JavaScriptCore framework, it is embedded into the runtime environment for Swift/ObjC. Let's inject <i>consoleLog</i> function defined in Swift into JS context and execute it simailarly as we did for j2v8: 
 ```Swift
 import JavaScriptCore
 ...
-let context = JSContext()
+
+private let consoleLog: @convention(block) (String) -> Void = { logMessage in
+    print("\nJS Console:", logMessage)
+}
+
+let jvm = JSVirtualMachine()
+let context = JSContext(virtualMachine: jvm)!
+
+#let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
+#context.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
+#_ = context.evaluateScript("consoleLog('hello')")
+
 context.evaluateScript("var num = 5 + 5")
 context.evaluateScript("var names = ['Grace', 'Ada', 'Margaret']")
 context.evaluateScript("var triple = function(value) { return value * 3 }")
