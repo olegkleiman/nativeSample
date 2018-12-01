@@ -36,7 +36,8 @@ This project demonstrates the integration between RN and Android. Android Activi
 Generally there are many way to reach the JS Engine context from Java. One may use [<code>j2v8 bindings</code>](https://github.com/eclipsesource/J2V8) for this purpose. The following is a simplified example of V8 context extending with j2v8 bindings:
 ```
 dependencies {
-    compile 'com.eclipsesource.j2v8:j2v8:4.6.0@aar'
+    ...
+    implementation 'com.eclipsesource.j2v8:j2v8:4.6.0@aar'
 }
 ```
 ```java
